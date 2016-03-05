@@ -1,0 +1,17 @@
+﻿<Window x:Class="KinectSetupDev.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Web-Browsing Kinect" Height="600" Width="990" Loaded="Window_Loaded" 
+        xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" 
+        Closing="Window_Closing" WindowState="Maximized">
+    <Canvas Name="MainCanvas">
+        <Grid Height="1200" Canvas.Left="344" Canvas.Top="157" Width="1920"/>
+        <my:KinectSensorChooser Canvas.Left="332" Canvas.Top="284" x:Name="kinectSensorChooser1" Width="328" />
+        <my:KinectColorViewer Canvas.Left="0" Canvas.Top="0" Width="640" Height="480" x:Name="kinectColorViewer1" 
+                              Kinect="{Binding Kinect, ElementName=kinectSensorChooser1}" />
+        <Button Canvas.Left="958" Canvas.Top="404" Content="Keyboard" Height="62" x:Name="KeyboardButton" Width="130" Click="KeyboardButton_Click" />
+        <Button Canvas.Left="822" Canvas.Top="284" Content="Url Voice Commands" Height="62" x:Name="UrlVoiceCmd" Width="134" Click="UrlVoiceCmd_Click" />
+        <Button Canvas.Left="1086" Canvas.Top="284" Content="Search Voice Commands" Height="62" x:Name="SearchVoiceCmd" Width="151" Click="SearchVoiceCmd_Click" />
+    </Canvas>
+</Window>
+
